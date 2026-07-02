@@ -33,7 +33,7 @@ Importante, la configuration Wifi de l'équipement sur le réseau étant écrite
 Par l'exploitation de la structure STATIC_CONF_FIELDS_t exposée à l'adresse 0 de l'EEPROM par :
 * [Le ModuleTIC](https://github.com/bastoon577-lang/Module_TIC/blob/main/SOFTWARE/Module_TIC/common_utils.h#L46)
 * [Le SmartCharger](https://github.com/bastoon577-lang/SmartCharger_utils/blob/83a58b5db8b868ffecfff1e72e23f74d6e20f49d/smartcharger/common_utils.h#L43)
-
+```
 typedef struct
 {
   char                  Hostname[65];                   // Hostname
@@ -48,7 +48,7 @@ typedef struct
   uint8_t               is_wifi_network_used  : 1;      // Bitfield indiquant un accrochage sur une borne Wifi
   uint8_t               RUF                   : 6;      // Reservé Usage Future
 } STATIC_CONF_FIELDS_t;
-
+```
 Le firmware du Module TIC étant suffisement légé (~400 Ko); il n'est pas nécessaire de recourir au Shim, la commande de mise à jour est la suivante :
 ```
 python espota.py -d -i 192.168.x.xxx -f ModuleTIC.ino.bin
